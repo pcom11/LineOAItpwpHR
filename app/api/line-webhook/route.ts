@@ -15,8 +15,9 @@ export const dynamic = 'force-dynamic';
 const { MessagingApiClient } = messagingApi;
 
 function getLineClient() {
-  const channelAccessToken = process.env.LINE_CHANNEL_ACCESS_TOKEN;
-  if (!channelAccessToken) throw new Error('LINE_CHANNEL_ACCESS_TOKEN is not set');
+  const raw = process.env.LINE_CHANNEL_ACCESS_TOKEN;
+  if (!raw) throw new Error('LINE_CHANNEL_ACCESS_TOKEN is not set');
+  const channelAccessToken = raw.replace(/\s+/g, '');
   return new MessagingApiClient({ channelAccessToken });
 }
 
