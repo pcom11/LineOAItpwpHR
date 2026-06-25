@@ -1,7 +1,7 @@
 import { GoogleGenAI } from '@google/genai';
 import type { FaqRow } from './faq';
 
-const MODEL = 'gemini-3.5-flash';
+const MODEL = 'gemini-2.5-flash';
 const TEMPERATURE = 1.0;
 const MAX_OUTPUT_TOKENS = 1024;
 
